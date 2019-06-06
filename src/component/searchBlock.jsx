@@ -5,7 +5,14 @@ import ReactDOM from 'react-dom';
 
 class SearchBlock extends React.Component {
     render() {
-        return <h1>SearchBlock</h1>
+        return (
+          <div>
+            <span>搜尋留言人：</span>
+            <input type="text"
+                   value={this.props.searchName}
+                   onChange={this.props.changeState}/>
+          </div>
+        )
     }
 }
 

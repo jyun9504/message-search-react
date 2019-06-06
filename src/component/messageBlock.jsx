@@ -6,8 +6,11 @@ import Message from './message';
 
 class MessageBlock extends React.Component {
     render() {
+      console.log(this.props.searchName)
         let message = this.props.messageData.map((item)=>{
-            return <Message key={item.id} name={item.name} message={item.message} />
+            if(item.name.indexOf(this.props.searchName) != -1){
+              return <Message key={item.id} name={item.name} message={item.message} />
+            }
         })
         return (
           <div>
